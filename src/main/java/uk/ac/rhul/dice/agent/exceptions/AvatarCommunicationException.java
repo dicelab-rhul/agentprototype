@@ -3,7 +3,9 @@ package uk.ac.rhul.dice.agent.exceptions;
 public class AvatarCommunicationException extends RuntimeException {
     private static final long serialVersionUID = -4304632577675178009L;
 
-    public AvatarCommunicationException() {}
+    public AvatarCommunicationException() {
+	super();
+    }
 
     public AvatarCommunicationException(String message) {
 	super(message);
