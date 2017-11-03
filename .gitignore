@@ -5,3 +5,6 @@ logs/
 .directory
 *.jar
 *.class
+target/
+target/*
+target/**
