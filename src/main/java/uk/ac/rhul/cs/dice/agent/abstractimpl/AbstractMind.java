@@ -3,36 +3,33 @@ package uk.ac.rhul.cs.dice.agent.abstractimpl;
 import java.util.ArrayList;
 import java.util.List;
 
-import uk.ac.rhul.cs.dice.agent.interfaces.Action;
 import uk.ac.rhul.cs.dice.agent.interfaces.Analyzable;
 import uk.ac.rhul.cs.dice.agent.interfaces.Mind;
+import uk.ac.rhul.cs.dice.agentcommon.interfaces.Action;
 
 public abstract class AbstractMind implements Mind {
-    private List<Analyzable> lastReceived;
-    private Action decidedAction;
+    private List<Analyzable> defaultLastReceivedPerceptions;
+    private Action<?> decidedAction;
     
     public AbstractMind() {
-	this.lastReceived = new ArrayList<>();
+	this.defaultLastReceivedPerceptions = new ArrayList<>();
     }
     
-    protected List<Analyzable> getLastReceived() {
-	return this.lastReceived;
+    protected List<Analyzable> getDefaultLastReceivedPerceptions() {
+	return this.defaultLastReceivedPerceptions;
     }
     
     @Override
-    public void perceive(Analyzable... perceptions) {
-	this.lastReceived.clear();
-	
-        for(Analyzable perception : perceptions) {
-            this.lastReceived.add(perception);
-        }
+    public void perceive(List<Analyzable> perceptions) {
+	this.defaultLastReceivedPerceptions.clear();
+	this.decidedAction = null;
     }
     
-    protected void setDecidedAction(Action action) {
+    protected void setDecidedAction(Action<?> action) {
 	this.decidedAction = action;
     }
     
-    protected Action getDecidedAction() {
+    protected Object getDecidedAction() {
 	return this.decidedAction;
     }
 }

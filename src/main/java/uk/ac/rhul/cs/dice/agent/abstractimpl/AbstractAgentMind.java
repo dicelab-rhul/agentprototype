@@ -4,7 +4,7 @@ import java.util.Random;
 
 import uk.ac.rhul.cs.dice.agent.interfaces.AgentMind;
 
-public abstract class AbstractAgentMind implements AgentMind {
+public abstract class AbstractAgentMind extends AbstractMind implements AgentMind {
     private final boolean isAgent;
     private Random rng;
     
