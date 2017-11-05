@@ -10,8 +10,13 @@ import uk.ac.rhul.cs.dice.agent.interfaces.Sensor;
 import uk.ac.rhul.cs.dice.agentcommon.interfaces.Actor;
 
 public abstract class AbstractAgent extends AbstractActiveBody implements Agent, Actor, Runnable {
+    private static final long serialVersionUID = 3934619712169517594L;
     private AgentMind mind;
     private AgentAppearance appearance;
+    
+    public AbstractAgent() {
+	//for serialization
+    }
     
     public AbstractAgent(String id, AgentAppearance appearance, List<Sensor> sensors, List<Actuator> actuators, AgentMind mind) {
 	super(id, sensors, actuators);

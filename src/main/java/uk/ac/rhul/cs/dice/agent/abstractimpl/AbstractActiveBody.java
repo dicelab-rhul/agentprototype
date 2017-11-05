@@ -1,5 +1,6 @@
 package uk.ac.rhul.cs.dice.agent.abstractimpl;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,10 @@ import uk.ac.rhul.cs.dice.agent.interfaces.Sensor;
 public abstract class AbstractActiveBody extends AbstractBody implements ActiveBody {
     private Map<SensorPurposeEnum, List<Sensor>> sensors;
     private Map<ActuatorPurposeEnum, List<Actuator>> actuators;
+    
+    public AbstractActiveBody() {
+	//for serialization
+    }
     
     public AbstractActiveBody(String id, List<Sensor> sensors, List<Actuator> actuators) {
 	super(id);
@@ -56,6 +61,13 @@ public abstract class AbstractActiveBody extends AbstractBody implements ActiveB
     public List<Sensor> getSpecificSensors(SensorPurposeEnum purpose) {
 	return this.sensors.get(purpose);
     }
+    
+    public List<Sensor> getAllSensors() {
+	List<Sensor> toReturn = new ArrayList<>();
+	this.sensors.values().forEach(toReturn::addAll);
+	
+	return toReturn;
+    }
 
     @Override
     public Map<ActuatorPurposeEnum, List<Actuator>> getActuators() {
@@ -65,5 +77,12 @@ public abstract class AbstractActiveBody extends AbstractBody implements ActiveB
     @Override
     public List<Actuator> getSpecificActuators(ActuatorPurposeEnum purpose) {
 	return this.actuators.get(purpose);
+    }
+    
+    public List<Actuator> getAllActuators() {
+	List<Actuator> toReturn = new ArrayList<>();
+	this.actuators.values().forEach(toReturn::addAll);
+	
+	return toReturn;
     }
 }
