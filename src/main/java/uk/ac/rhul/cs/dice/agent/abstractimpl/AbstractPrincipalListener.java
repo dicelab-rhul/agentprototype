@@ -2,6 +2,8 @@ package uk.ac.rhul.cs.dice.agent.abstractimpl;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 import uk.ac.rhul.cs.dice.agent.exceptions.AvatarCommunicationException;
 import uk.ac.rhul.cs.dice.agent.interfaces.PrincipalListener;
@@ -9,12 +11,13 @@ import uk.ac.rhul.cs.dice.agent.interfaces.PrincipalListener;
 public abstract class AbstractPrincipalListener implements PrincipalListener {
     private static final long serialVersionUID = 1407257982440754273L;
     private boolean active;
+    private transient ServerSocket server;
     private transient ObjectInputStream listeningChannel;
     
-    public AbstractPrincipalListener(ObjectInputStream listeningChannel) {
+    public AbstractPrincipalListener(ServerSocket server) {
 	super();
 	
-	this.listeningChannel = listeningChannel;
+	this.server = server;
     }
     
     @Override
@@ -24,7 +27,14 @@ public abstract class AbstractPrincipalListener implements PrincipalListener {
     
     @Override
     public void activate() {
-	this.active = true;
+	try {
+	    Socket withPrincipal = this.server.accept();
+	    this.listeningChannel = new ObjectInputStream(withPrincipal.getInputStream());
+	    this.active = true;
+	}
+	catch(IOException e) {
+	    throw new AvatarCommunicationException(e);
+	}
     }
     
     @Override
