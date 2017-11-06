@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs.dice.agent.interfaces;
 
-public interface Analyzable {
+import java.io.Serializable;
+
+public interface Analyzable extends Serializable {
 
 }

@@ -10,6 +10,7 @@ import uk.ac.rhul.cs.dice.agent.interfaces.Sensor;
 import uk.ac.rhul.cs.dice.agentcommon.interfaces.Actor;
 
 public abstract class AbstractAvatar extends AbstractActiveBody implements Avatar, Actor {
+    private static final long serialVersionUID = -3209731325209092245L;
     private PrincipalListener principalListener;
     private AvatarAppearance appearance;
     

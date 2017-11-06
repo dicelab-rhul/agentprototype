@@ -7,8 +7,9 @@ import uk.ac.rhul.cs.dice.agent.exceptions.AvatarCommunicationException;
 import uk.ac.rhul.cs.dice.agent.interfaces.PrincipalListener;
 
 public abstract class AbstractPrincipalListener implements PrincipalListener {
+    private static final long serialVersionUID = 1407257982440754273L;
     private boolean active;
-    private ObjectInputStream listeningChannel;
+    private transient ObjectInputStream listeningChannel;
     
     public AbstractPrincipalListener(ObjectInputStream listeningChannel) {
 	super();
