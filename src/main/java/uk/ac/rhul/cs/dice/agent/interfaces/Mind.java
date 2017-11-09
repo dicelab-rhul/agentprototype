@@ -9,4 +9,8 @@ public interface Mind extends Serializable {
     public abstract void perceive(Set<Analyzable> perceptions);
     public abstract Object decide();
     public abstract <T extends Action<?>> void execute(T action);
+    
+    public default String getName() {
+	return getClass().getName();
+    }
 }
