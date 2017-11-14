@@ -15,7 +15,9 @@ import uk.ac.rhul.cs.dice.agent.interfaces.Sensor;
 /**
  * This class represents an abstract active body, which is an implementation of an {@link ActiveBody}.
  * It also inherits from {@link AbstractBody}. The main added value is the presence of {@link Sensor}s
- * and {@link Actuator}s.
+ * and {@link Actuator}s. <br /><br />
+ * 
+ * Known sub-classes: {@link AbstractAgent}, {@link AbstractAvatar}.
  * 
  * @author cloudstrife9999
  *
@@ -24,10 +26,24 @@ public abstract class AbstractActiveBody extends AbstractBody implements ActiveB
     private Map<SensorPurposeEnum, List<Sensor>> sensors;
     private Map<ActuatorPurposeEnum, List<Actuator>> actuators;
     
+    /**
+     * 
+     * Empty constructor for serialization.
+     * 
+     */
     public AbstractActiveBody() {
 	//for serialization
     }
     
+    /**
+     * 
+     * Constructs an {@link AbstractActiveBody} with a {@link String} ID, a {@link List} of {@link Sensor}s, and a {@link List} of {@link Actuator}s.
+     * 
+     * @param id a {@link String} ID.
+     * @param sensors a {@link List} of {@link Sensor}s.
+     * @param actuators a {@link List} of {@link Actuator}s.
+     * 
+     */
     public AbstractActiveBody(String id, List<Sensor> sensors, List<Actuator> actuators) {
 	super(id);
 	
@@ -62,6 +78,7 @@ public abstract class AbstractActiveBody extends AbstractBody implements ActiveB
 	return this.sensors.get(purpose);
     }
     
+    @Override
     public List<Sensor> getAllSensors() {
 	List<Sensor> toReturn = new ArrayList<>();
 	this.sensors.values().forEach(toReturn::addAll);
@@ -79,6 +96,7 @@ public abstract class AbstractActiveBody extends AbstractBody implements ActiveB
 	return this.actuators.get(purpose);
     }
     
+    @Override
     public List<Actuator> getAllActuators() {
 	List<Actuator> toReturn = new ArrayList<>();
 	this.actuators.values().forEach(toReturn::addAll);

@@ -62,6 +62,24 @@ public interface ActiveBody extends Body, SingleNetworkRunnable {
     
     /**
      * 
+     * Returns this {@link ActiveBody} {@link Sensor}s as a {@link List}.
+     * 
+     * @return this {@link ActiveBody} {@link Sensor}s as a {@link List}.
+     * 
+     */
+    public abstract List<Sensor> getAllSensors();
+    
+    /**
+     * 
+     * Returns this {@link ActiveBody} {@link Actuator}s as a {@link List}.
+     * 
+     * @return this {@link ActiveBody} {@link Actuator}s as a {@link List}.
+     * 
+     */
+    public abstract List<Actuator> getAllActuators();
+    
+    /**
+     * 
      * Sends <code>action</code> to an appropriate {@link Actuator}.
      * 
      * @param action

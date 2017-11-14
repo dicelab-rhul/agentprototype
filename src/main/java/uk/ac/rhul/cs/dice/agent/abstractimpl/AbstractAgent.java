@@ -13,16 +13,39 @@ import uk.ac.rhul.cs.dice.agent.interfaces.Analyzable;
 import uk.ac.rhul.cs.dice.agent.interfaces.Sensor;
 import uk.ac.rhul.cs.dice.agentcommon.interfaces.Actor;
 
+/**
+ * 
+ * Abstract implementation of {@link Agent} and {@link Actor} which extends {@link AbstractActiveBody}. It has an {@link AgentMind}, an {@link ActorAppearance} and it can store a {@link Set} of {@link Analyzable}s for the {@link AgentMind}.
+ * 
+ * @author cloudstrife9999
+ *
+ */
 public abstract class AbstractAgent extends AbstractActiveBody implements Agent, Actor {
     private static final long serialVersionUID = 3934619712169517594L;
     private AgentMind mind;
     private ActorAppearance appearance;
     private Set<Analyzable> forMind;
     
+    /**
+     * 
+     * Empty constructor for serialization.
+     * 
+     */
     public AbstractAgent() {
 	//for serialization
     }
     
+    /**
+     * 
+     * Creates an {@link AbstractAgent} from a {@link String} id, an {@link ActorAppearance}, a {@link List} of {@link Sensor}s, a {@link List} of {@link Actuator}s and an {@link AgentMind}.
+     * 
+     * @param id a {@link String} id.
+     * @param appearance an {@link ActorAppearance}.
+     * @param sensors a {@link List} of {@link Sensor}s.
+     * @param actuators a {@link List} of {@link Actuator}s.
+     * @param mind an {@link AgentMind}.
+     * 
+     */
     public AbstractAgent(String id, ActorAppearance appearance, List<Sensor> sensors, List<Actuator> actuators, AgentMind mind) {
 	super(id, sensors, actuators);
 	

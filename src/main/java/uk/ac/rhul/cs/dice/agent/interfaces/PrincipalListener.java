@@ -2,9 +2,13 @@ package uk.ac.rhul.cs.dice.agent.interfaces;
 
 import java.io.Serializable;
 
+import uk.ac.rhul.cs.dice.agent.abstractimpl.AbstractPrincipalListener;
+
 /**
  * 
- * An interface for principal listeners for {@link Avatar}s. It extends {@link Mind} and {@link Serializable}.
+ * An interface for principal listeners for {@link Avatar}s. It extends {@link Mind} and {@link Serializable}.<br /><br />
+ * 
+ * Known implementations: {@link AbstractPrincipalListener}.
  * 
  * @author cloudstrife9999
  *
