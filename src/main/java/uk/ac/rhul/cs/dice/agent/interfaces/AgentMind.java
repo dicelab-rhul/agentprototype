@@ -32,4 +32,13 @@ public interface AgentMind extends Mind {
      * 
      */
     public abstract Random getRng();
+    
+    /**
+     * 
+     * Returns the {@link String} body ID.
+     * 
+     * @return the {@link String} body ID.
+     * 
+     */
+    public abstract String getBodyId();
 }
