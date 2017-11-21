@@ -14,6 +14,15 @@ public interface ActorAppearance extends Appearance {
     
     /**
      * 
+     * Returns the {@link String} id of the {@link Actor}.
+     * 
+     * @return the {@link String} id of the {@link Actor}.
+     * 
+     */
+    public abstract String getId();
+    
+    /**
+     * 
      * Returns the {@link Appearance} of the {@link Mind} of this {@link Actor}.
      * 
      * @return the {@link Appearance} of the {@link Mind} of this {@link Actor}.
