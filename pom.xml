@@ -48,5 +48,10 @@
 			<artifactId>agentcommon</artifactId>
 			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>it.unibo.alice.tuprolog</groupId>
+			<artifactId>tuprolog</artifactId>
+			<version>3.2.1</version>
+		</dependency>
 	</dependencies>
 </project>
