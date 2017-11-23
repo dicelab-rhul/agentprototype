@@ -5,21 +5,72 @@ import java.util.List;
 import alice.tuprolog.Prolog;
 import alice.tuprolog.Theory;
 
-public interface PrologMind extends AgentMind {
+/**
+ * 
+ * This interface is for a {@link Mind} which uses Prolog in the decision process. It extends {@link GenericPrologMind}.
+ * 
+ * @author cloudstrife9999
+ *
+ */
+public interface PrologMind extends GenericPrologMind<Prolog> {
 
-	public abstract Prolog getInterpreter();
+    /**
+     * 
+     * Returns the {@link Prolog} interpreter.
+     * 
+     * @return the {@link Prolog} interpreter.
+     * 
+     */
+    @Override
+    public abstract Prolog getInterpreter();
 
-	public abstract void setInterpreter(Prolog interpreter);
+    /**
+     * 
+     * Sets the {@link Prolog} interpreter.
+     * 
+     * @param interpreter the {@link Prolog} interpreter.
+     * 
+     */
+    @Override
+    public abstract void setInterpreter(Prolog interpreter);
 
-	public abstract List<Theory> getTheories();
-	
-	public abstract void setTheories(List<Theory> theories);
+    /**
+     * 
+     * Return all the {@link Theory} objects currently stored.
+     * 
+     * @return a {@link List} of the {@link Theory} objects currently stored.
+     * 
+     */
+    public abstract List<Theory> getTheories();
 
-	public default void addTheory(Theory theory) {
-		getTheories().add(theory);
-	}
-	
-	public default Theory getFirstTheory() {
-		return getTheories().get(0);
-	}
+    /**
+     * 
+     * Sets a {@link List} of {@link Theory} objects, overwriting any previous {@link Theory} currently stored.
+     * 
+     * @param theories a {@link List} of {@link Theory} objects.
+     * 
+     */
+    public abstract void setTheories(List<Theory> theories);
+
+    /**
+     * 
+     * Appends a {@link Theory} to the existing ones.
+     * 
+     * @param theory a {@link Theory}.
+     * 
+     */
+    public default void addTheory(Theory theory) {
+	getTheories().add(theory);
+    }
+
+    /**
+     * 
+     * Returns the first {@link Theory} of the {@link List}, if available.
+     * 
+     * @return the first {@link Theory} of the {@link List}, if available.
+     * 
+     */
+    public default Theory getFirstTheory() {
+	return getTheories().get(0);
+    }
 }
