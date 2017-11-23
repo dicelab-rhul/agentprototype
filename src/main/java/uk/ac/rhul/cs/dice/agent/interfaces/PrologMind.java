@@ -7,7 +7,7 @@ import alice.tuprolog.Theory;
 
 /**
  * 
- * This interface is for a {@link Mind} which uses Prolog in the decision process. It extends {@link GenericPrologMind}.
+ * This interface is for an {@link AgentMind} which uses Prolog in the decision process. It extends {@link GenericPrologMind}.
  * 
  * @author cloudstrife9999
  *
