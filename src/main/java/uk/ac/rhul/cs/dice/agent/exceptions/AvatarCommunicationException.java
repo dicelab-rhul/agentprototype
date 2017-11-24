@@ -23,7 +23,9 @@ public class AvatarCommunicationException extends RuntimeException {
 
     /**
      * 
-     * Calls the super() constructor.
+     * Calls the super(message) constructor.
+     * 
+     * @param message a {@link String} message.
      * 
      */
     public AvatarCommunicationException(String message) {
@@ -34,6 +36,8 @@ public class AvatarCommunicationException extends RuntimeException {
      * 
      * Calls the super(cause) constructor.
      * 
+     * @param cause a {@link Throwable} which caused this {@link AvatarCommunicationException}.
+     * 
      */
     public AvatarCommunicationException(Throwable cause) {
 	super(cause);
@@ -43,6 +47,9 @@ public class AvatarCommunicationException extends RuntimeException {
      * 
      * Calls the super(message, cause) constructor.
      * 
+     * @param message a {@link String} message.
+     * @param cause a {@link Throwable} which caused this {@link AvatarCommunicationException}.
+     * 
      */
     public AvatarCommunicationException(String message, Throwable cause) {
 	super(message, cause);
@@ -51,6 +58,11 @@ public class AvatarCommunicationException extends RuntimeException {
     /**
      * 
      * Calls the super(message, cause, enableSuppression, writableStackTrace) constructor.
+     * 
+     * @param message a {@link String} message.
+     * @param cause a {@link Throwable} which caused this {@link AvatarCommunicationException}.
+     * @param enableSuppression a boolean flag which tells whether or not to enable the suppression.
+     * @param writableStackTrace a boolean flag which tells whether or not the stack trace should be writable.
      * 
      */
     public AvatarCommunicationException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
