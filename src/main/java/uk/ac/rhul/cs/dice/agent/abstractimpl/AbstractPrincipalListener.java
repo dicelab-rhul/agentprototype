@@ -74,13 +74,13 @@ public abstract class AbstractPrincipalListener implements PrincipalListener {
 	try {
 	    String actionClassName = this.listeningChannel.readUTF();
 	    
-	    return Class.forName(actionClassName).newInstance();
-	}
-	catch(ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-	    throw new IllegalArgumentException(e);
+	    return Class.forName(actionClassName).getConstructor().newInstance();
 	}
         catch(IOException e) {
             throw new AvatarCommunicationException(e);
         }
+	catch(Exception e) {
+	    throw new IllegalArgumentException(e);
+	}
     }
 }
