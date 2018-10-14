@@ -66,11 +66,13 @@
 			<groupId>uk.ac.rhul.cs.dice</groupId>
 			<artifactId>agentcommon</artifactId>
 			<version>1.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>it.unibo.alice.tuprolog</groupId>
 			<artifactId>tuprolog</artifactId>
 			<version>3.2.1</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>
