@@ -33,7 +33,7 @@ public interface Mind extends Serializable {
      * @param perceptions of {@link Analyzable} perceptions.
      * 
      */
-    public abstract void receiveFirstPerception(Set<Analyzable> perceptions);
+    public abstract void receiveFirstPerception(Analyzable perception);
     
     /**
      * 
