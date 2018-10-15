@@ -28,6 +28,22 @@ public interface Mind extends Serializable {
     
     /**
      * 
+     * Perceives a {@link Set} of {@link Analyzable} perceptions before starting a simulation.
+     * 
+     * @param perceptions of {@link Analyzable} perceptions.
+     * 
+     */
+    public abstract void receiveFirstPerception(Set<Analyzable> perceptions);
+    
+    /**
+     * 
+     * Revises the internal state of the {@link Mind}.
+     * 
+     */
+    public abstract void revise();
+    
+    /**
+     * 
      * Reasons and decides something (the specific behavior is left to implementations of this interface.
      * 
      * @return the decided {@link Object}.
