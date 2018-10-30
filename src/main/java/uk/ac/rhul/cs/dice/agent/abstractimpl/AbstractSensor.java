@@ -12,7 +12,7 @@ import uk.ac.rhul.cs.dice.agent.interfaces.Sensor;
  * @author cloudstrife9999
  *
  */
-public class AbstractSensor implements Sensor {
+public abstract class AbstractSensor implements Sensor {
     private static final long serialVersionUID = -1892548294873707892L;
     private final SensorPurposeEnum purpose;
     private String id;
