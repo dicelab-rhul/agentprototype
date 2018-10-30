@@ -27,7 +27,7 @@ public abstract class AbstractAgentMind extends AbstractMind implements AgentMin
      */
     public AbstractAgentMind(String bodyId) {
 	this.isAgent = true;
-	this.rng = new Random();
+	this.rng = new Random(System.nanoTime());
 	this.bodyId = bodyId;
     }
     
