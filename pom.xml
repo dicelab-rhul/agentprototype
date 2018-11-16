@@ -5,7 +5,7 @@
 
 	<groupId>uk.ac.rhul.cs.dice</groupId>
 	<artifactId>agentprototype</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>agent</name>
@@ -35,10 +35,10 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
+				<version>3.8.0</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.10</source>
+					<target>1.10</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -65,13 +65,13 @@
 		<dependency>
 			<groupId>uk.ac.rhul.cs.dice</groupId>
 			<artifactId>agentcommon</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>1.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>it.unibo.alice.tuprolog</groupId>
 			<artifactId>tuprolog</artifactId>
-			<version>3.2.1</version>
+			<version>3.3.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
