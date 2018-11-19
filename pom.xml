@@ -66,6 +66,7 @@
 			<groupId>uk.ac.rhul.cs.dice</groupId>
 			<artifactId>agentcommon</artifactId>
 			<version>1.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>it.unibo.alice.tuprolog</groupId>
