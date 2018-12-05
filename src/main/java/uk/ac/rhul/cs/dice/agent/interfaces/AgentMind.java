@@ -1,5 +1,6 @@
 package uk.ac.rhul.cs.dice.agent.interfaces;
 
+import java.math.BigDecimal;
 import java.util.Random;
 
 import uk.ac.rhul.cs.dice.agent.abstractimpl.AbstractAgentMind;
@@ -32,6 +33,24 @@ public interface AgentMind extends Mind {
      * 
      */
     public abstract Random getRng();
+    
+    /**
+     * 
+     * Returns the lower limit (inclusive) of the output of the RNG.
+     * 
+     * @return the lower limit (inclusive) of the output of the RNG.
+     * 
+     */
+    public abstract BigDecimal getRngLowerLimit();
+    
+    /**
+     * 
+     * Returns the upper limit (inclusive) of the output of the RNG.
+     * 
+     * @return the upper limit (inclusive) of the output of the RNG.
+     * 
+     */
+    public abstract BigDecimal getRngUpperLimit();
     
     /**
      * 
